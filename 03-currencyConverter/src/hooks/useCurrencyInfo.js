@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function useCurrencyInfo(currency) {
   const [data, setData] = useState({});
