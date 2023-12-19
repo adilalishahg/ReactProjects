@@ -33,12 +33,12 @@ export default function App() {
   }, [passwordGenerator, length, numberAllowed, charAllowed]);
 
   return (
-    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-3 py-4 my-8 text-orange-500 bg-gray-700  ">
-      <h1 className="text-white text-center">Password Generator</h1>
-      <div className="flex shadow rounded-lg overflow-hidden mb-4">
+    <div className="w-full max-w-md px-3 py-4 mx-auto my-8 text-orange-500 bg-gray-700 rounded-lg shadow-md ">
+      <h1 className="text-center text-white">Password Generator</h1>
+      <div className="flex mb-4 overflow-hidden rounded-lg shadow">
         <input
           type="text"
-          className="outline-none w-full py-1 px-3"
+          className="w-full px-3 py-1 outline-none"
           placeholder="password"
           value={password}
           id="password"
