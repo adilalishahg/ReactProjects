@@ -2,23 +2,28 @@ import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 export default function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("pkr");
-  const [convertedAmount, setConvertedAmount] = useState(0);
+  const [convertedAmount, setconvertedAmount] = useState("");
+
   const currencyInfo = useCurrencyInfo(from);
+
   const options = Object.keys(currencyInfo);
-  const BackgroundImage =
-    "https://images.pexels.com/photos/19283549/pexels-photo-19283549/free-photo-of-hot-air-balloons-in-cappadocia-turkey.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+
   const swap = () => {
-    setFrom(from);
-    setTo(to);
-    setConvertedAmount(amount);
+    setFrom(to);
+    setTo(from);
+    setconvertedAmount(amount);
     setAmount(convertedAmount);
   };
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    setconvertedAmount(amount * currencyInfo[to]);
   };
+  const BackgroundImage2 =
+    "https://images.pexels.com/photos/17765583/pexels-photo-17765583/free-photo-of-a-black-background-with-a-bunch-of-flowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const BackgroundImage =
+    "https://images.pexels.com/photos/19283549/pexels-photo-19283549/free-photo-of-hot-air-balloons-in-cappadocia-turkey.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   return (
     <div
       className="flex flex-wrap items-center justify-center w-full h-screen bg-no-repeat bg-cover"
@@ -26,8 +31,14 @@ export default function App() {
         backgroundImage: `url('${BackgroundImage}')`,
       }}
     >
-      <div className="w-full">
-        <div className="w-full max-w-md p-5 mx-auto border rounded-lg border-gray-60 backdrop-blur-sm bg-white/30">
+      <div className="flex w-full">
+        <div
+          className="w-1/4 max-w-md p-3 mx-4 bg-center bg-no-repeat bg-cover border border-gray-200 rounded-lg backdrop-blur-md bg-white/30"
+          style={{
+            backgroundImage: `url('${BackgroundImage2}')`,
+          }}
+        ></div>
+        <div className="w-1/2 max-w-md p-5 mx-auto border rounded-lg border-gray-60 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -38,10 +49,13 @@ export default function App() {
               <InputBox
                 label="From"
                 amount={amount}
+                onAmountChange={(amount) => setAmount(amount)}
                 currencyOption={options}
-                onCurrencyChange={(currency) => setFrom(currency)}
+                onCurrencyChange={(currency) => {
+                  setAmount(amount);
+                  setFrom(currency);
+                }}
                 selectCurrency={from}
-                onAmountChange={(currency) => setAmount(currency)}
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -60,7 +74,7 @@ export default function App() {
                 currencyOption={options}
                 onCurrencyChange={(currency) => setTo(currency)}
                 selectCurrency={to}
-                amountDisable
+                amountDisale
               />
             </div>
             <button
