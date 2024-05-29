@@ -5,7 +5,7 @@ const Accordian = ({title,content}) => {
   return (
      
         <section className='accordion-card'>
-            <div className='header' onClick={()=>setIsActive(!isActive)}>
+            <div className='card-title' onClick={()=>setIsActive(!isActive)}>
                 <div>{title}</div>
                 <p className='icon'>{isActive?"-":"+"}</p>
             </div>

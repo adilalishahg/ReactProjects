@@ -3,12 +3,22 @@
     margin: 0;
     box-sizing:border-box
 }
-body{
+body2{
     display:flex;
     justify-content:center;
     align-items: center;
     height: 100vh;
     background-color: #e8faff
+}
+body{
+    background:rgb(36,36,36);
+    color:#fff;
+    font-family:sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .testimonials{
     margin:0 auto;
@@ -49,5 +59,29 @@ body{
     border-radius: 5px;
     outline: none;
     transition: background-color 0.3s
+
+}
+.accordion-card{
+    margin:20px;
+    padding:20px;
+    background: rgb(73,73,73);
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    width: 40rem;
+}
+.card-title{
+    display: flex;
+    justify-content: space-between;
+    width: 50rem;
+}
+.icon{
+    font-size: 1.5rem;cursor: pointer;
+}
+p.card-info{
+    width:30rem;
+    padding:20px 0;
+    line-height: 1.3;
 
 }
