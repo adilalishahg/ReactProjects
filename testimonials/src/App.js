@@ -1,15 +1,23 @@
-import Accordian from "./Accordian";
-import Testimonials from "./Testimonials";
-import { accordions } from './utils/content'
+// import Accordian from "./Accordian";
+import Navigation from "./Navigation/Nav";
+import Products from "./Products/Products";
+import Recommended from "./Recommended/Recommended";
+import Sidebar from "./Sidebar/Sidebar";
+// import Testimonials from "./Testimonials";
+// import { accordions } from './utils/content'
+// import Validate from "./Validate";
 
  
 function App() {
   return (
-    <div className="App">
-        {accordions.map(({title,content})=>(
-                <Accordian title={title} content={content}/>
-            ))}
-    </div>
+    
+       <>
+        <Sidebar/>
+        <Navigation/>
+        <Recommended/>
+        <Products/>
+       </>
+   
   );
 }
 
