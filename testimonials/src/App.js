@@ -1,4 +1,5 @@
 // import Accordian from "./Accordian";
+import "./app.css"
 import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
